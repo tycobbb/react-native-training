@@ -99,4 +99,4 @@ for the rest of this section let's build a simple app to fill out the directory 
 
 we'll build a very simple tab bar app that can hop between two components with red and purple backgrounds, respectively.
 
-in the interest of not dumping the whole project in a markdown document, the end result will live in the [example-complete](../example-complete) directory for reference.
+in the interest of not dumping the whole project in a markdown document, the end result will live in the [example](../example) directory for reference.

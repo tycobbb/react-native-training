@@ -7,11 +7,12 @@
 		"ios": "yarn ios:run",
 		"ios:run": "react-native run-ios",
 		"ios:log": "react-native log-ios",
-		"ios:xcode": "open ios/*.xcworkspace",
+		"ios:xcode": "open ios/*.xcodeproj",
 		"ios:clean": "rm -rf ios/build",
-		"android": "yarn android:run",
 		"android": "react-native run-android",
-		"android:log": "react-native log-android"
+		"android:log": "react-native log-android",
+		"lint": "standard | snazzy",
+		"lint:fix": "standard --fix | snazzy"
 	},
 	"dependencies": {
 		"react": "16.0.0-alpha.12",
@@ -21,7 +22,9 @@
 		"babel-jest": "21.2.0",
 		"babel-preset-react-native": "4.0.0",
 		"jest": "21.2.1",
-		"react-test-renderer": "16.0.0-alpha.12"
+		"react-test-renderer": "16.0.0-alpha.12",
+		"snazzy": "^7.0.0",
+		"standard": "^10.0.3"
 	},
 	"jest": {
 		"preset": "react-native"

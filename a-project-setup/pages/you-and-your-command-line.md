@@ -24,7 +24,7 @@ i recommend wrapping up common tasks with yarn scripts. yarn is smart about runn
     "ios": "yarn ios:run",
     "ios:run": "react-native run-ios",
     "ios:log": "react-native log-ios",
-    "ios:xcode": "open ios/*.xcworkspace",
+    "ios:xcode": "open ios/*.xcodeproj",
     "ios:clean": "rm -rf ios/build",
     "android": "yarn android:run",
     "android": "react-native run-android",
@@ -43,11 +43,13 @@ $ yarn ios
 
 #### `standard` & `snazzy`
 
-standard is a linter that will check your code style and automatically fix it for you. you can't really configure it, and that's a good thing.
+javascript doesn't have any compile-time type safety (without tools), so a linter is necessary to not lose your mind.
+
+standard checks your code style and automatically fixes it for you. you can't really configure it, and that's a good thing.
 
 snazzy is a tool that makes standard's output more readable.
 
-javascript doesn't have any compile-time type safety (without tools), so a linter is necessary to not lose your mind. let's install and add scripts for them:
+let's install and add scripts for them:
 
 ```sh
 $ yarn add -D standard snazzy
@@ -58,18 +60,46 @@ $ yarn add -D standard snazzy
   ...
   "scripts": {
     "lint": "standard | snazzy",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "standard --fix | snazzy"
   },
   ...
 }
 ```
 
+try it out, run the linter and then allow it to auto-fix everything it can:
+
+```sh
+$ yarn lint
+$ yarn lint:fix
+```
+
+you'll notice that it can't fix everything, and there are still some linting errors in the test files. standard will (rightfully) complain if you reference a global variable that it doesn't know about, and tests will usually reference jest globals like `it`.
+
+you can fix this by referencing the globals through the global object
+
+```js
+global.it(...)
+```
+
+you can also add a header comment at the top of the file:
+
+```js
+/* globals name, anotherName */
+```
+
+however for jest specifically, you can silence warnings about _all_ of it's globals by specifying a linting environment in the header comment:
+
+```js
+/* eslint-env jest */
+```
+
+it also complains that the tests assign an unused variable, which you can fix by deleting the assignment `const tree =`.
+
+try another `yarn lint`.
+
 #### jest
 "test": "jest",
 "test:watch": "jest --watch",
 "test:debug": "node --debug-brk --inspect ./node_modules/.bin/jest --runInBand",
-
-
-
 
 skip flow for now

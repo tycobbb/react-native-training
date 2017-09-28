@@ -15,7 +15,7 @@ $ cd <project>
 
 `yarn.lock` is your dependency lockfile. it records the canonical versions for the packages you install, and makes sure you and the person next to you installs those same versions.
 
-`.babelrc` configures babel, the tool that allows you to use ES6 (and future) javascript syntax. babel compiles your code down to ES-whatever-is-needed-by-your-platform. if you need to add new javascript language features, you would add them here.
+`.babelrc` configures babel, the tool that allows you to use es6 (and future) javascript syntax. babel transpiles your code down to es-whatever-is-needed-by-your-platform. if you need to add new javascript language features, you would add them here.
 
 `.flowconfig` configures flow-type, a static type-checker for javascript. we'll skip this one for now.
 
@@ -29,7 +29,7 @@ let's delete .babelrc:
 $ rm .babelrc
 ```
 
-you can configure babel through your package.json, and I think it's better there. copy over .babelrc's contents, like this:
+you can configure babel through your package.json, and i think it's better there. copy over .babelrc's contents, like this:
 
 ```json
 {

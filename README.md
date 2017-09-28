@@ -54,7 +54,7 @@ $ atom
 
 we need 'one' package, `nuclide` (it'll install a bunch of others for you):
 
-1. bring up the **command palette** (`⌘⇧P`).
+1. bring up the **command palette** (`⇧⌘P`).
 2. search for 'install packages' and hit enter.
 3. install nuclide
 

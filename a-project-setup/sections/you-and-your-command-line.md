@@ -1,6 +1,6 @@
 # you and your command line
 
-you're gonna do a lot more work on the command line relative to traditional native development (at least iOS). let's examine some of our tools.
+you're gonna do a lot more work on the command line relative to traditional native development (at least ios). let's examine some of our tools.
 
 ## tools
 

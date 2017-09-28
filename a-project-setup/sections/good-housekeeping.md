@@ -10,9 +10,9 @@ this is the entry point for your javascript code, and you're required to have a 
 
 #### `./ios`
 
-this directory contains all the native iOS code, as well as the .xcodeproj and all the other iOS artifacts you're familiar with.
+this directory contains all the native ios code, as well as the .xcodeproj and all the other ios artifacts you're familiar with.
 
-one notable difference is that react-native builds the iOS project to `./ios/build`, so there's no need to go digging through DerviedData. if you run into a problem with the module cache or otherwise stale native iOS code, you'll want to wipe out this directory using `yarn ios:clean`
+one notable difference is that react-native builds the ios project to `./ios/build`, so there's no need to go digging through dervied data. if you run into a problem with the module cache or otherwise stale native ios code, you'll want to wipe out this directory using `yarn ios:clean`
 
 
 #### `./android`

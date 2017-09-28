@@ -11,6 +11,9 @@
 		"ios:clean": "rm -rf ios/build",
 		"android": "react-native run-android",
 		"android:log": "react-native log-android",
+		"test": "jest",
+		"test:watch": "yarn test --watch",
+		"test:debug": "node --debug-brk --inspect ./node_modules/.bin/jest --runInBand",
 		"lint": "standard | snazzy",
 		"lint:fix": "standard --fix | snazzy"
 	},

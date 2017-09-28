@@ -2,6 +2,8 @@
 
 you're gonna do a lot more work on the command line relative to traditional native development (at least iOS). let's examine some of our tools.
 
+## tools
+
 #### `react-native`
 the react-native cli allows you to interact with react-native, simulators, emulators, and much more without having to open xcode or android studio. you probably won't touch it too often, because you also have...
 
@@ -27,7 +29,7 @@ i recommend wrapping up common tasks with yarn scripts. yarn is smart about runn
     "ios:xcode": "open ios/*.xcodeproj",
     "ios:clean": "rm -rf ios/build",
     "android": "yarn android:run",
-    "android": "react-native run-android",
+    "android:run": "react-native run-android",
     "android:log": "react-native log-android"
   },
   ...
@@ -39,6 +41,30 @@ react-native will start the packager for you, but it's nicer to run it in its ow
 ```sh
 $ yarn start
 $ yarn ios
+```
+
+#### `jest`
+
+jest is a test runner and test suite all in one. we'll talk about tests in more depth later, but for now you can add a few yarn script and try them out:
+
+```json
+{
+  ...,
+  "scripts": {
+    "test": "jest",
+    "test:watch": "yarn test --watch",
+    "test:debug": "node --debug-brk --inspect ./node_modules/.bin/jest --runInBand"
+  },
+  ...
+}
+```
+
+all the tests should pass right now, which you can see:
+
+```sh
+$ yarn test
+# a sweet watch mode that re-runs test as you change files
+$ yarn test:watch
 ```
 
 #### `standard` & `snazzy`
@@ -97,9 +123,17 @@ it also complains that the tests assign an unused variable, which you can fix by
 
 try another `yarn lint`.
 
-#### jest
-"test": "jest",
-"test:watch": "jest --watch",
-"test:debug": "node --debug-brk --inspect ./node_modules/.bin/jest --runInBand",
+you can also add an atom package `linter-js-standard` that will show you errors in atom as-you-type. i like it, but it's not for everyone.
 
-skip flow for now
+## seeking validation
+
+i usually add one more script that i'll always run before i push code to the remote repo. you could also make it a pre-commit hook if you want:
+
+```json
+{
+  ...
+  "scripts": {
+    "validate": "yarn lint && yarn test"
+  }
+}
+```

@@ -1,5 +1,7 @@
 # a brave new world
 
+let's spin up a project
+
 ```sh
 $ react-native init <project>
 $ cd <project>

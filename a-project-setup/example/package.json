@@ -1,0 +1,29 @@
+{
+	"name": "example",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "react-native start",
+		"ios": "yarn ios:run",
+		"ios:run": "react-native run-ios",
+		"ios:log": "react-native log-ios",
+		"ios:xcode": "open ios/*.xcworkspace",
+		"ios:clean": "rm -rf ios/build",
+		"android": "yarn android:run",
+		"android": "react-native run-android",
+		"android:log": "react-native log-android"
+	},
+	"dependencies": {
+		"react": "16.0.0-alpha.12",
+		"react-native": "0.48.4"
+	},
+	"devDependencies": {
+		"babel-jest": "21.2.0",
+		"babel-preset-react-native": "4.0.0",
+		"jest": "21.2.1",
+		"react-test-renderer": "16.0.0-alpha.12"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}

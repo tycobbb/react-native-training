@@ -1,0 +1,41 @@
+{
+	"name": "example",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "react-native start",
+		"ios": "yarn ios:run",
+		"ios:run": "react-native run-ios",
+		"ios:log": "react-native log-ios",
+		"ios:xcode": "open ios/*.xcodeproj",
+		"ios:clean": "rm -rf ios/build",
+		"android": "react-native run-android",
+		"android:log": "react-native log-android",
+		"test": "jest",
+		"test:watch": "yarn test --watch",
+		"test:debug": "node --debug-brk --inspect ./node_modules/.bin/jest --runInBand",
+		"lint": "standard | snazzy",
+		"lint:fix": "standard --fix | snazzy",
+		"validate": "yarn lint && yarn test"
+	},
+	"dependencies": {
+		"react": "16.0.0-alpha.12",
+		"react-native": "0.48.4"
+	},
+	"devDependencies": {
+		"babel-core": "^6.0.0",
+		"babel-eslint": "^8.0.1",
+		"babel-jest": "21.2.0",
+		"babel-preset-react-native": "4.0.0",
+		"jest": "21.2.1",
+		"react-test-renderer": "16.0.0-alpha.12",
+		"snazzy": "^7.0.0",
+		"standard": "^10.0.3"
+	},
+	"jest": {
+		"preset": "react-native"
+	},
+	"standard": {
+		"parser": "babel-eslint"
+	}
+}

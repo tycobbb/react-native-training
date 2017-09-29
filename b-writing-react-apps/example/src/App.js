@@ -1,3 +1,4 @@
+import './fetch'
 import React, { Component } from 'react'
 import { Layout } from './navigation'
 import * as scenes from './scenes'

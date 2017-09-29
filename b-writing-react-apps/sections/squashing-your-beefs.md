@@ -2,7 +2,7 @@
 
 you're gonna write broken code (especially if you don't use flowtype or typescript). debugging in react-native is thankfully fairly easy, and has been getting better recently.
 
-## choppin' wood
+## choppin' logs
 
 as always, you can log information via `console.log` and watch the output as you go about your business. you can view the logs one of two ways.
 

@@ -6,3 +6,4 @@
 2. [you get a component](sections/you-get-a-component.md)
 3. [do you have enough flair](sections/do-you-have-enough-flair.md)
 4. [squashing your beefs](sections/squashing-your-beefs.md)
+5. [let's make something of ourselves](sections/lets-make-something.md)

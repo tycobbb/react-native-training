@@ -1,4 +1,4 @@
-# lets do something
+# let's make something of ourselves
 
 let's make a tiny app using a mock version of the riot games api. the rate limiting on their api is too extreme to debug stuff live, so i'll supply a mock that supports the following endpoints:
 

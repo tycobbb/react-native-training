@@ -3,6 +3,17 @@ import { View, Text, StyleSheet } from 'react-native'
 import { TabBar } from './TabBar'
 import * as scenes from '../scenes'
 
+/*
+{
+  red: {
+    ...route
+  },
+  purple: {
+    ..route
+  }
+}
+*/
+
 const routes = Object.values(scenes)
   .sort((left, right) => left.tab.index > right.tab.index)
 

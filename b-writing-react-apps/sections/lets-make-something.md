@@ -7,7 +7,7 @@ let's make a tiny app using a mock version of the riot games api. the rate limit
 
 ##### `champions`
 - returns an unpaginated list of all champions
-- endpoint: `/static-data/v3/champions`
+- endpoint: `/lol/static-data/v3/champions`
 
 ##### `champion/:id`
 - returns a specific champion by id

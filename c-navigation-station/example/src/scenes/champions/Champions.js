@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, FlatList, ActivityIndicator, StyleSheet } from 'react-native'
 import { fetchChampions } from './fetchChampions'
 import { Champion } from './Champion'
-import { FadeIn } from './FadeIn'
+import { FadeIn } from '../../components'
 
 export class Champions extends Component {
   state = {
@@ -12,9 +12,8 @@ export class Champions extends Component {
 
   // events
   didTapChampion = (champion) => {
-    const { navigation } = this.props
-    navigation.navigate('champion', {
-      key: champion.key
+    this.props.navigation.navigate('champion', {
+      id: champion.id
     })
   }
 

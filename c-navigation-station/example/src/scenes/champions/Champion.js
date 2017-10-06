@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, Text, Animated, StyleSheet } from 'react-native'
-import { FadeInImage } from './FadeInImage'
+import { TouchableOpacity, Text, StyleSheet } from 'react-native'
+import { SlideIn, FadeInImage } from '../../components'
 
 function imageUrl (endpoint) {
   return { uri: `https://ddragon.leagueoflegends.com/cdn/${endpoint}` }
@@ -11,10 +11,6 @@ function iconUrl ({ full }) {
 }
 
 export class Champion extends Component {
-  state = {
-    animation: new Animated.Value(0)
-  }
-
   // events
   didTapChampion = () => {
     const { champion, onPress } = this.props
@@ -22,31 +18,15 @@ export class Champion extends Component {
   }
 
   // lifecycle
-  componentDidMount () {
-    Animated.timing(this.state.animation, {
-      toValue: 1,
-      duration: 200
-    }).start()
-  }
-
   render () {
     const { style, champion } = this.props
 
-    const { animation } = this.state
-    const textStyle = {
-      opacity: animation,
-      marginLeft: animation.interpolate({
-        inputRange: [0, 1],
-        outputRange: [20, 0]
-      })
-    }
-
     return <TouchableOpacity onPress={this.didTapChampion} style={[styles.champion, style]}>
       <FadeInImage style={styles.icon} source={iconUrl(champion.image)} />
-      <Animated.View style={textStyle}>
+      <SlideIn>
         <Text style={styles.name}>{champion.name}</Text>
         <Text style={styles.subtitle}>{champion.title}</Text>
-      </Animated.View>
+      </SlideIn>
     </TouchableOpacity>
   }
 }

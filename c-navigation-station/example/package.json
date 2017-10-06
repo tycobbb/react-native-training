@@ -28,13 +28,26 @@
 		"babel-eslint": "^8.0.1",
 		"babel-jest": "21.2.0",
 		"babel-preset-react-native": "4.0.0",
-		"jest": "21.2.1",
+		"enzyme": "^3.1.0",
+		"enzyme-adapter-react-16": "^1.0.1",
+		"jest": "^21.2.1",
+		"react-dom": "^16.0.0",
 		"react-test-renderer": "16.0.0-alpha.12",
 		"snazzy": "^7.0.0",
 		"standard": "^10.0.3"
 	},
+	"babel": {
+		"presets": [
+			"react-native"
+		]
+	},
 	"jest": {
-		"preset": "react-native"
+		"preset": "react-native",
+		"clearMocks": true,
+		"setupTestFrameworkScriptFile": "<rootDir>/test/setupFramework.js",
+		"moduleNameMapper": {
+			"^fixtures$": "<rootDir>/test/fixtures"
+		}
 	},
 	"standard": {
 		"parser": "babel-eslint"

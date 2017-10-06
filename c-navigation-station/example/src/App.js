@@ -9,10 +9,6 @@ const Navigator = StackNavigator(scenes, {
 })
 
 export class App extends Component {
-  componentDidMount () {
-    console.log('runs before request finishes')
-  }
-
   render () {
     return <View style={styles.container}>
       <Navigator />

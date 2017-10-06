@@ -16,6 +16,7 @@
 		"test:debug": "node --debug-brk --inspect ./node_modules/.bin/jest --runInBand",
 		"lint": "standard | snazzy",
 		"lint:fix": "standard --fix | snazzy",
+		"flow": "flow",
 		"validate": "yarn lint && yarn test"
 	},
 	"dependencies": {
@@ -28,6 +29,7 @@
 		"babel-eslint": "^8.0.1",
 		"babel-jest": "21.2.0",
 		"babel-preset-react-native": "4.0.0",
+		"flow-bin": "^0.53.0",
 		"jest": "21.2.1",
 		"react-test-renderer": "16.0.0-alpha.12",
 		"snazzy": "^7.0.0",

@@ -16,6 +16,11 @@
 ; Ignore polyfills
 .*/Libraries/polyfills/.*
 
+; ignore libraries with broken flow types
+; .*/node_modules/react-native-tab-view/.*
+; .*/node_modules/react-navigation/.*
+; .*/node_modules/react-native/Libraries/Components/.*
+
 [include]
 
 [libs]
